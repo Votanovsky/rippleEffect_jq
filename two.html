@@ -9,26 +9,13 @@
 </head>
 <body class="flex items-center justify-center p-5">
     <svg display="none">
-        <filter id="turbulence">
-         <feTurbulence
-          id="turb"
-          type="fractalNoise"
-          baseFrequency="0.01"
-          numOctaves="1"
-          data-filterId="3"
-         />
-         <feDisplacementMap
-          id="disp"
-          xChannelSelector="R"
-          yChannelSelector="G"
-          in="SourceGraphic"
-          in2="fractalNoise"
-          scale="70"
-         />
+        <filter id="turbulence" filterUnits="userSpaceOnUse">
+            <feTurbulence type="fractalNoise" baseFrequency="0.01" seed="10" result="NOISE"></feTurbulence>
+            <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="60" xChannelSelector="B" yChannelSelector="G"></feDisplacementMap>
         </filter>
     </svg>
        
-    <div class="grid grid-cols-1">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 py-20">
         <div class="container one">
             <img src="picture1.jpg" alt="">
         </div>
@@ -73,7 +60,6 @@
  .container {
 	 height: 350px;
      width: 350px;
-     margin-bottom: 50px;
     }
     @media (max-width: 500px) { 
         .container {
