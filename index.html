@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="bg ripple"></div>
     <div class="container">
         <div class="img-wrapper">
             <div class="img ripple"></div>
@@ -72,19 +71,11 @@
     <script>
 
     $('.ripple').ripples({
-        resolution: 200,
+        resolution: 250,
         dropRadius: 50, //px
-        perturbance: 0.015,
+        perturbance: 0.02,
     });
 
-	// setInterval(function() {
-	// 	var $el = $('.ripple');
-	// 	var x = Math.random() * $el.outerWidth();
-	// 	var y = Math.random() * $el.outerHeight();
-	// 	var dropRadius = 50;
-	// 	var strength = 0.008 + Math.random() * 0.008;
-	// 	$el.ripples('drop', x, y, dropRadius, strength);
-	// }, 4000);;
     </script>
 </body>
 </html>
